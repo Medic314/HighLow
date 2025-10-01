@@ -4,7 +4,6 @@ def main():
     playing = True
     while playing == True:
         target = random.choice(range(101))
-        print(target)
         end = determine_result(target)
         if end == "n":
             playing = False
