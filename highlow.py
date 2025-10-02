@@ -11,6 +11,7 @@ def main():
 
 
 def get_input():
+    """get input from the user, loops if invalid"""
     input_loop = True
     while input_loop == True:
         guess = int(input("Enter a number: "))
@@ -21,6 +22,7 @@ def get_input():
             return guess
     
 def play_again():
+    """asks to play again, returns n"""
     result = input("Play again? Y/N").strip().lower()
     if result == "y":
         print("")
@@ -30,6 +32,7 @@ def play_again():
 
 
 def determine_result(target):
+    """determines the result based on what the target is, uses get_input()"""
     guess_loop = True
     guesses = 1
     while guess_loop == True:
