@@ -5,11 +5,9 @@ def main():
     playing = True
     while playing == True:
         target = random.choice(range(101))
-        result = determine_result(target)
-        if result == "win":
-            end = play_again()
-            if end == "n":
-                playing = False
+        end = determine_result(target)
+        if end == "n":
+            playing = False
 
 
 def get_input(result, guesses, last_min_guess, last_max_guess):
@@ -36,7 +34,7 @@ def determine_result(target):
         if guess == target:
             loop = False
             print(f"\nThe bot did it! the number was {target} and the bot got it in {guesses} tries!")
-            return "win"
+            return play_again()
         if guess < target:
             guesses += 1
             result = "higher"
